@@ -1,13 +1,31 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction, useEffect } from 'react'
+import { Feature } from '../../helpers/features'
+import { Plan as MappedPlan } from '../../helpers/plans'
 import styles from './styles.module.scss'
 
-const Plan = (): JSX.Element => {
+export interface PlanProps {
+  isStandartSelected: boolean,
+  setIsStandartSelected: Dispatch<SetStateAction<boolean>>,
+  planInfo: MappedPlan
+}
+
+const Plan = (planProps: PlanProps): JSX.Element => {
+  const { isStandartSelected, setIsStandartSelected, planInfo } = planProps
+  const { description, features, cost } = planInfo
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked } = e.target
+    checked ?
+      setIsStandartSelected( false ) :
+      setIsStandartSelected( true )
+  }
+
   return (
     <div className={ styles.planSelector }>
       <div className={ styles.planSelector__choose }>
         <span>Plan Estándar</span>
         <label className={ styles.switch }>
-          <input type="checkbox" />
+          <input type="checkbox" onChange={ handleInputChange } />
           <span className={ styles.slider }></span>
         </label>
         <span>Plan Premium</span>
@@ -17,11 +35,11 @@ const Plan = (): JSX.Element => {
         <div className={ styles.planSelector__card__header }>
             <p>
               <span className={ styles.planSelector__card__header__medium }>S/</span>
-              <span className={ styles.planSelector__card__header__large }>29</span>
+              <span className={ styles.planSelector__card__header__large }>{ cost }</span>
               <span className={ styles.planSelector__card__header__small }>/ AL MES</span>
             </p>
 
-            <p>Mollit reprehenderit laborum est anim excepteur sint anim amet incididunt.</p>
+            <p>{ description }</p>
             
         </div>
 
@@ -29,10 +47,13 @@ const Plan = (): JSX.Element => {
 
         <div className={ styles.planSelector__card__body }>
           <ul className={ styles.planSelector__card__body__list }>
-            <li className={ styles.planSelector__card__body__list__item }>Laboris enim in esse ea culpa excepteur exercitation cupidatat ipsum.</li>
-            <li className={ styles.planSelector__card__body__list__item }>Proident nostrud qui nisi nisi deserunt ea id.</li>
-            <li className={ styles.planSelector__card__body__list__item }>Ea aute ut sint voluptate reprehenderit aliqua pariatur commodo aliqua ut consectetur duis mollit amet.</li>
-            <li className={ styles.planSelector__card__body__list__item }>Do esse labore nisi nostrud minim incididunt esse occaecat.</li>
+            { features.map( (feat: Feature) => (
+              <li className={ styles.planSelector__card__body__list__item }>
+                { feat.description }  
+              </li>
+            ) )
+
+            }
           </ul>
         </div>
         <button className={ styles.planSelector__card__button }>Suscribirme</button>
