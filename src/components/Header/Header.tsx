@@ -12,7 +12,7 @@ const Header = (headerProps: HeaderProps): JSX.Element => {
   const { step, setStep } = headerProps
 
   const renderHeader = () => {
-    return step !== 1 ? (
+    return step === 2 ? (
     <div className={ styles.header__step2 }>
       <h1 className={ styles.header__title } onClick={ () => setStep(1) }>Tus datos</h1>
     </div>) : (

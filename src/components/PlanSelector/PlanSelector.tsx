@@ -4,14 +4,13 @@ import { Plan as MappedPlan } from '../../helpers/plans'
 import styles from './styles.module.scss'
 
 export interface PlanProps {
-  isStandartSelected: boolean,
   setIsStandartSelected: Dispatch<SetStateAction<boolean>>,
   planInfo: MappedPlan,
   setStep: Dispatch<SetStateAction<number>>
 }
 
 const Plan = (planProps: PlanProps): JSX.Element => {
-  const { isStandartSelected, setIsStandartSelected, planInfo, setStep } = planProps
+  const { setIsStandartSelected, planInfo, setStep } = planProps
   const { description, features, cost } = planInfo
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
