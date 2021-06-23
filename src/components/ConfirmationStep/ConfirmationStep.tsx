@@ -2,6 +2,7 @@ import React from 'react'
 import { SetStateAction } from 'react'
 import { Dispatch } from 'react'
 import { Plan } from '../../helpers/plans'
+import ConfirmationHeader from './ConfirmationHeader/ConfirmationHeader'
 import styles from './styles.module.scss'
 
 export interface ConfirmationStepProps {
@@ -14,17 +15,9 @@ const ConfirmationStep = (confirmationStepProps: ConfirmationStepProps) => {
   
   return (
     <div className={ styles.confirmationStep }>
-      <header className={ styles.confirmationStep__header }>
-        <img
-          className={ styles.confirmationStep__header__checkedIcon }
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDrhuaTAoIIXgn5ircQD43ewolGO5mP0uVJmX2aT2br0Cvp0JBwogPx-L6IGborNf-InE&usqp=CAU"
-          alt="aproved icon"
-        />
-
-        <h2 className={ styles.confirmationStep__header__titleSmall }>Bienvenido, has adquirido el plan</h2>
-        <h2 className={ styles.confirmationStep__header__titleLarge }>{ planInfo.name }</h2>
-        <h3 className={ styles.confirmationStep__header__titleMedium }>S/.{ planInfo.cost } al mes</h3>
-      </header>
+      <ConfirmationHeader
+        planInfo={ planInfo }
+      />
 
       <p className={ styles.confirmationStep__body }>
         <p className={ styles.confirmationStep__body__description }>{ planInfo.description }</p>
