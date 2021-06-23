@@ -26,7 +26,8 @@ const Plan = (planProps: PlanProps): JSX.Element => {
       <div className={ styles.planSelector__choose }>
         <span>Plan Estándar</span>
         <label className={ styles.switch }>
-          <input type="checkbox" onChange={ handleInputChange } />
+          <label htmlFor="selectPlan" className={ styles.label }>Seleccionar plan</label>
+          <input id='selectPlan' type="checkbox" onChange={ handleInputChange } />
           <span className={ styles.slider }></span>
         </label>
         <span>Plan Premium</span>
@@ -49,7 +50,7 @@ const Plan = (planProps: PlanProps): JSX.Element => {
         <div className={ styles.planSelector__card__body }>
           <ul className={ styles.planSelector__card__body__list }>
             { features.map( (feat: Feature) => (
-              <li className={ styles.planSelector__card__body__list__item }>
+              <li key={ feat.id } className={ styles.planSelector__card__body__list__item }>
                 { feat.description }  
               </li>
             ) )

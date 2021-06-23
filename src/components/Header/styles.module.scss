@@ -4,7 +4,15 @@
   justify-content: center;
   align-items: center;
 
-  &__title {
+  &__step2 {
+    background-color: #333333;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 18px;
+  }
+
+  &__title{
     font-weight: bolder;
     font-size: 21px;
     color: white;

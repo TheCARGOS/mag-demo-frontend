@@ -43,7 +43,10 @@ const AppLayout = (): JSX.Element => {
 
   return (
     <div className={ styles.AppLayout }>
-      <Header />
+      <Header
+        step={ step }
+        setStep={ setStep }
+      />
 
       <div className={ styles.AppLayout__container }>
         { renderSteps() }
