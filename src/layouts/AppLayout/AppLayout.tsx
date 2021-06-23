@@ -7,6 +7,7 @@ import styles from './styles.module.scss'
 const AppLayout = (): JSX.Element => {
   const [isStandartSelected, setIsStandartSelected] = useState( true )
   const [planInfo, setPlanInfo] = useState( getStandartPlan() )
+  const [step, setStep] = useState(1)
 
   useEffect(() => {
     isStandartSelected ?
@@ -14,16 +15,38 @@ const AppLayout = (): JSX.Element => {
       setPlanInfo( getPremiumPlan() )
   }, [isStandartSelected])
 
+  const renderSteps = () => {
+    switch (step) {
+      case 1:
+        return (<PlanSelector
+          isStandartSelected={ isStandartSelected }
+          setIsStandartSelected={ setIsStandartSelected }
+          planInfo={ planInfo }
+          setStep={ setStep }
+        />)
+
+      case 2:
+        return <span>paso 2</span>
+
+      case 3:
+        return <span>paso 3</span>
+
+      default:
+        return (<PlanSelector
+          isStandartSelected={ isStandartSelected }
+          setIsStandartSelected={ setIsStandartSelected }
+          planInfo={ planInfo }
+          setStep={ setStep }
+        />)
+    }
+  }
+
   return (
     <div className={ styles.AppLayout }>
       <Header />
 
       <div className={ styles.AppLayout__container }>
-        <PlanSelector
-          isStandartSelected={ isStandartSelected }
-          setIsStandartSelected={ setIsStandartSelected }
-          planInfo={ planInfo }
-        />
+        { renderSteps() }
       </div>
     </div>
   )
