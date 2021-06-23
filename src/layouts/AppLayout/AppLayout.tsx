@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import ConfirmationStep from '../../components/ConfirmationStep/ConfirmationStep'
 import Header from '../../components/Header/Header'
 import PaymentMethod from '../../components/PaymentMethod/PaymentMethod'
 import PlanSelector from '../../components/PlanSelector/PlanSelector'
@@ -33,7 +34,10 @@ const AppLayout = (): JSX.Element => {
         />)
 
       case 3:
-        return <span>paso 3</span>
+        return (<ConfirmationStep
+          planInfo={ planInfo }
+          setStep={ setStep }
+        />)
 
       default:
         return (<PlanSelector
