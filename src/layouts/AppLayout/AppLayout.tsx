@@ -1,10 +1,14 @@
 import React from 'react'
-// import styles from './styles.module.scss'
+import Header from '../../components/Header/Header'
+import Plan from '../../components/Plan/Plan'
+import styles from './styles.module.scss'
 
 const AppLayout = () => {
   return (
     <div>
-      <h1>Test</h1>
+      <Header />
+
+      <Plan />
     </div>
   )
 }
