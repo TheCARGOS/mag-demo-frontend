@@ -5,7 +5,7 @@ import styles from './styles.module.scss'
 
 const AppLayout = () => {
   return (
-    <div>
+    <div className={ styles.AppLayout }>
       <Header />
 
       <Plan />
