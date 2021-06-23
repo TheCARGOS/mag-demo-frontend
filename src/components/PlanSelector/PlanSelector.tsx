@@ -4,13 +4,14 @@ import { Plan as MappedPlan } from '../../helpers/plans'
 import styles from './styles.module.scss'
 
 export interface PlanProps {
+  isStandartSelected: boolean,
   setIsStandartSelected: Dispatch<SetStateAction<boolean>>,
   planInfo: MappedPlan,
   setStep: Dispatch<SetStateAction<number>>
 }
 
 const Plan = (planProps: PlanProps): JSX.Element => {
-  const { setIsStandartSelected, planInfo, setStep } = planProps
+  const { isStandartSelected, setIsStandartSelected, planInfo, setStep } = planProps
   const { description, features, cost } = planInfo
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,7 +27,7 @@ const Plan = (planProps: PlanProps): JSX.Element => {
         <span>Plan Estándar</span>
         <label className={ styles.switch }>
           <label htmlFor="selectPlan" className={ styles.label }>Seleccionar plan</label>
-          <input id='selectPlan' type="checkbox" onChange={ handleInputChange } />
+          <input id='selectPlan' type="checkbox" onChange={ handleInputChange } defaultChecked={ !isStandartSelected } />
           <span className={ styles.slider }></span>
         </label>
         <span>Plan Premium</span>

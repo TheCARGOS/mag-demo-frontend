@@ -21,6 +21,7 @@ const AppLayout = (): JSX.Element => {
     switch (step) {
       case 1:
         return (<PlanSelector
+          isStandartSelected={ isStandartSelected }
           setIsStandartSelected={ setIsStandartSelected }
           planInfo={ planInfo }
           setStep={ setStep }
@@ -41,6 +42,7 @@ const AppLayout = (): JSX.Element => {
 
       default:
         return (<PlanSelector
+          isStandartSelected={ isStandartSelected }
           setIsStandartSelected={ setIsStandartSelected }
           planInfo={ planInfo }
           setStep={ setStep }
