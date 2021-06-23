@@ -1,0 +1,12 @@
+.header {
+  background-color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    font-weight: bolder;
+    font-size: 21px;
+    color: white;
+  }
+}

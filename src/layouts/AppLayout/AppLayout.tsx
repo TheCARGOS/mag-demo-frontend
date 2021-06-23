@@ -1,14 +1,16 @@
 import React from 'react'
 import Header from '../../components/Header/Header'
-import Plan from '../../components/Plan/Plan'
+import PlanSelector from '../../components/PlanSelector/PlanSelector'
 import styles from './styles.module.scss'
 
-const AppLayout = () => {
+const AppLayout = (): JSX.Element => {
   return (
     <div className={ styles.AppLayout }>
       <Header />
 
-      <Plan />
+      <div className={ styles.AppLayout__container }>
+        <PlanSelector />
+      </div>
     </div>
   )
 }

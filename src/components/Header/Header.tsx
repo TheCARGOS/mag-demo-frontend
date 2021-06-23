@@ -3,8 +3,8 @@ import styles from './styles.module.scss'
 
 const Header = (): JSX.Element => {
   return (
-    <div>
-      Mag.
+    <div className={ styles.header }>
+      <h1 className={ styles.header__title }>Mag.</h1>
     </div>
   )
 }
