@@ -72,9 +72,8 @@ const PaymentForm = (planFormProps: PlanFormProps) => {
   
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
-    const { found, message } = validateForm( formState )
+    const { found } = validateForm( formState )
     if ( found) {
-      alert( message )
       return
     } else {
       setUserInfo( formState )

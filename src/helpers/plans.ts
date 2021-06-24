@@ -13,7 +13,9 @@ export const getStandartPlan = (): Plan => {
         id: 1,
         name: 'Plan Estándar',
         description: 'PFugiat nostrud fugiat do proident amet esse nostrud nisi pariatur.',
-        features: getFeatures().filter( (feat: Feature, index) => index <= 2 ),
+        features: getFeatures().map( (feat: Feature, index: number) => (
+            index <= 2 ? { ...feat, isActive: true } : feat
+        ) ),
         cost: 29
     }
 }
@@ -23,7 +25,9 @@ export const getPremiumPlan = (): Plan => {
         id: 2,
         name: 'Plan Premium',
         description: 'PFugiat nostrud fugiat do proident amet esse nostrud nisi pariatur.',
-        features: getFeatures(),
+        features: getFeatures().map( (feat: Feature, index: number) => (
+            index <= 4 ? { ...feat, isActive: true } : feat
+        ) ),
         cost: 59
     }
 }

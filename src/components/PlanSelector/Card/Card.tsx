@@ -21,7 +21,7 @@ const Card = (cardProps: CardProps): JSX.Element => {
           <span className={styles.planSelector__card__header__small}>/ AL MES</span>
         </p>
 
-        <p>{ description }</p>
+        <p>{description}</p>
 
       </div>
 
@@ -30,11 +30,8 @@ const Card = (cardProps: CardProps): JSX.Element => {
       <div className={styles.planSelector__card__body}>
         <ul className={styles.planSelector__card__body__list}>
           {features.map((feat: Feature) => (
-            <li key={feat.id} className={styles.planSelector__card__body__list__item}>
-              {feat.description}
-            </li>
-          ))
-          }
+            <li key={feat.id} className={!feat.isActive ? styles.planSelector__card__body__list__item__inactive : ''}>✔️ { feat.description }</li>
+          ))}
         </ul>
       </div>
       <button

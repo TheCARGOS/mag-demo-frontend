@@ -1,6 +1,7 @@
 import React, { Dispatch } from 'react'
+import { useEffect } from 'react'
 import { SetStateAction } from 'react'
-import { Feature } from '../../../helpers/features'
+import { Feature, getFeatures } from '../../../helpers/features'
 import { Plan } from '../../../helpers/plans'
 import styles from '../styles.module.scss'
 
@@ -31,8 +32,8 @@ const PaymentDetails = (paymentDetailsProps: PaymentDetailsProps) => {
           <p className={ styles.description__features__description }>{ planInfo.description }</p>
 
           <ul className={ styles.description__features__feature }>
-            {planInfo.features.map((feat: Feature) => (
-              <li key={ feat.id }>{ feat.description }</li>
+            { planInfo.features.map((feat: Feature) => (
+              <li key={ feat.id } className={ !feat.isActive ? styles.description__features__feature__inactive : ''  }>✔️ { feat.description }</li>
             ))}
           </ul>
         </div>)

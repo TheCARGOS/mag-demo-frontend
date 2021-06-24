@@ -38,8 +38,13 @@
       text-align: start;
 
       &__list {
-        &__item {
+        li {
           margin: 10px 0;
+        }
+
+        &__item__inactive {
+          text-decoration: line-through;
+          opacity: .5;
         }
       }
     }

@@ -108,15 +108,21 @@
       li {
         margin: 10px 0;
       }
-    }
-  }
 
+      &__inactive {
+        text-decoration: line-through;
+        opacity: .5;
+      }
+    }
+
+  }
+  
   &__large {
     font-size: 18px;
     font-weight: bolder;
     line-height: 2;
   }
-
+  
   &__medium {
     font-size: 18px;
     font-weight: bolder;
@@ -125,7 +131,7 @@
 }
 
 .errorContainer {
-
+  
   &__message {
     color: red;
     font-weight: bolder;
