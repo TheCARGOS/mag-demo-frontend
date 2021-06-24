@@ -15,6 +15,15 @@ El reto consiste en implementar en código los diseños dados [ver mockups](http
 
 ![resultado final](./assets/mag-result.png)
 
+### Metrícas
+Tanto las métricas en movil y escritorio dan un resultado de 100% en overall de Rendimiento, Accesibilidad, Mejores Prácticas y SEO.
+
+#### Metrícas Escritorio
+![resultado final escritorio](./assets/desktop-metrics.png)
+
+#### Metrícas Movil
+![resultado final movil](./assets/mobile-metrics.png)
+
 
 # Eso fue todo, muchas gracias por llegar hasta aca! 🎉
 
