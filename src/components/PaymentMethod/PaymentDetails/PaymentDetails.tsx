@@ -1,4 +1,4 @@
-import React, { Dispatch } from 'react'
+import React, { Dispatch, MouseEventHandler } from 'react'
 import { useEffect } from 'react'
 import { SetStateAction } from 'react'
 import { Feature, getFeatures } from '../../../helpers/features'
@@ -18,6 +18,11 @@ const PaymentDetails = (paymentDetailsProps: PaymentDetailsProps) => {
 
   const toggleFeatures = () => {
     setIsFeaturesActive( !isFeaturesActive )
+  }
+
+  const handleTogglePlan = (e: React.MouseEvent<HTMLElement>) => {
+    e.stopPropagation()
+    setIsStandartSelected(val => !val)
   }
 
   return (
@@ -40,7 +45,7 @@ const PaymentDetails = (paymentDetailsProps: PaymentDetailsProps) => {
         }
 
         <div className={ styles.description__row }>
-          <a className={ styles.description__row__center} onClick={ () => setIsStandartSelected(val => !val)} href="#!">Cambiar a {alternativePlan.name }</a>
+          <a className={ styles.description__row__center} onClick={ handleTogglePlan } href="#!">Cambiar a {alternativePlan.name }</a>
         </div>
       </div>
     </div>
