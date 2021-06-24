@@ -4,11 +4,13 @@ import Header from '../../components/Header/Header'
 import PaymentMethod from '../../components/PaymentMethod/PaymentMethod'
 import PlanSelector from '../../components/PlanSelector/PlanSelector'
 import { getPlans, getPremiumPlan, getStandartPlan } from '../../helpers/plans'
+import { getDefaultUserInfo } from '../../helpers/user'
 import styles from './styles.module.scss'
 
 const AppLayout = (): JSX.Element => {
   const [isStandartSelected, setIsStandartSelected] = useState( true )
   const [planInfo, setPlanInfo] = useState( getStandartPlan() )
+  const [userInfo, setUserInfo] = useState( getDefaultUserInfo() )
   const [step, setStep] = useState(1)
 
   useEffect(() => {
@@ -32,12 +34,15 @@ const AppLayout = (): JSX.Element => {
           setIsStandartSelected={ setIsStandartSelected }
           planInfo={ planInfo }
           setStep={ setStep }
+          userInfo={ userInfo }
+          setUserInfo={ setUserInfo }
         />)
 
       case 3:
         return (<ConfirmationStep
           planInfo={ planInfo }
           setStep={ setStep }
+          userInfo={ userInfo }
         />)
 
       default:

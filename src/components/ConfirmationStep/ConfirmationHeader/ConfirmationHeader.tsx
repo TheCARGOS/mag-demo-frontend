@@ -1,13 +1,16 @@
 import React from 'react'
 import { Plan } from '../../../helpers/plans'
+import { UserInfo } from '../../../helpers/user'
 import styles from '../styles.module.scss'
 
 export interface ConfirmationHeaderProps {
-  planInfo: Plan
+  planInfo: Plan,
+  userInfo: UserInfo
 }
 
 const ConfirmationHeader = (confirmationHeaderProps: ConfirmationHeaderProps) => {
-  const { planInfo } = confirmationHeaderProps
+  const { planInfo, userInfo } = confirmationHeaderProps
+  const { fullName } = userInfo
 
   return (
     <header className={ styles.confirmationStep__header }>
@@ -17,7 +20,7 @@ const ConfirmationHeader = (confirmationHeaderProps: ConfirmationHeaderProps) =>
         alt="aproved icon"
       />
 
-      <h2 className={ styles.confirmationStep__header__titleSmall }>Bienvenido, has adquirido el plan</h2>
+      <h2 className={ styles.confirmationStep__header__titleSmall }>Bienvenido { fullName }, has adquirido el plan</h2>
       <h2 className={ styles.confirmationStep__header__titleLarge }>{ planInfo.name }</h2>
       <h3 className={ styles.confirmationStep__header__titleMedium }>S/.{ planInfo.cost } al mes</h3>
     </header>
