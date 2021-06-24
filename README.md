@@ -1,46 +1,21 @@
-# Getting Started with Create React App
+# DESAFIO MAG DEMO APP (Vanilla REACT APP)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El reto consiste en implementar en código los diseños dados [ver mockups](https://xd.adobe.com/view/95b2cf77-ac47-4c1d-5430-43576b88590e-e383/)
 
-## Available Scripts
+###Tecnologías y/o librerías implementadas
+* Para este desafio se hizo unicamente de las herramientas dadas por `create react-app`, se evitaron librerías como `react-router-dom`, `redux` (aunque `useContext` pudo ser una buena opción). Tampoco se utilizó algún framework o librería de CSS como `bootstrap` o `semantic-ui`. ¿Con qué fin? subir un poco la dificultad al reto y demostrar conocimientos en lenguajes vanilla.
+* Se hizo uso exclusivo de Typescript (tsx) y SASS (scss). Typescript nos permitirá crear un código limpio de bugs (por datos ingresados inesperados gracias a su tipado estático) y SASS nos ayuda a organizar mejor nuestras clases con el patrón BEM.
 
-In the project directory, you can run:
 
-### `yarn start`
+###Nota:
+* En un entorno real, se hubiese optado por utilizar `useContext` y `useReducer` para manejar el estado desde un `higher-order component` hecho para eso (`provider`) 
+* En un entorno real se hubiese optado por utilizar `semantic-ui-react` para solo reutilizar componentes de la librería y obtener los diseños y comportamientos pre-definidos, además que sus estilos generales son muy semejantes a los diseños dados por el mock-up.
+* El proyecto tomó dos madrugadas en realizarse debido al tiempo dado (3 días) y a la abstención de uso de alguna librería (decision personal para agregar dificultad al reto)
+### Revise el resultado final de este proyecto [ver live preview](https://thecargos.github.io/mag-demo-frontend/).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![resultado final](./assets/mag-result.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+#Eso fue todo, muchas gracias por llegar hasta aca! 🎉
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
