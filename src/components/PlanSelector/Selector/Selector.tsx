@@ -18,13 +18,13 @@ const Selector = (selectorProps: SelectorProps) => {
 
   return (
     <div className={ styles.planSelector__choose }>
-      <span>Plan Estándar</span>
+      <span className={ isStandartSelected ? styles.planSelector__choose__selected : '' }>Plan Estándar</span>
       <label className={ styles.switch }>
         <label htmlFor="selectPlan" className={ styles.label }>Seleccionar plan</label> 
         <input id='selectPlan' type="checkbox" onChange={ handleInputChange } defaultChecked={ !isStandartSelected } />
         <span className={ styles.slider }></span>
       </label>
-      <span>Plan Premium</span>
+      <span className={ !isStandartSelected ? styles.planSelector__choose__selected : '' }>Plan Premium</span>
     </div>
   )
 }
