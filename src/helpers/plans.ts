@@ -12,7 +12,7 @@ export const getStandartPlan = (): Plan => {
     return {
         id: 1,
         name: 'Plan Estándar',
-        description: 'PFugiat nostrud fugiat do proident amet esse nostrud nisi pariatur.',
+        description: 'Commodo magna irure velit anim sunt dolore aute ipsum irure.',
         features: getFeatures().map( (feat: Feature, index: number) => (
             index <= 2 ? { ...feat, isActive: true } : feat
         ) ),
@@ -24,7 +24,7 @@ export const getPremiumPlan = (): Plan => {
     return {
         id: 2,
         name: 'Plan Premium',
-        description: 'PFugiat nostrud fugiat do proident amet esse nostrud nisi pariatur.',
+        description: 'Voluptate id commodo excepteur eu et laboris fugiat enim pariatur ex mollit anim.',
         features: getFeatures().map( (feat: Feature, index: number) => (
             index <= 4 ? { ...feat, isActive: true } : feat
         ) ),

@@ -21,7 +21,7 @@ const Card = (cardProps: CardProps): JSX.Element => {
           <span className={styles.planSelector__card__header__small}>/ AL MES</span>
         </p>
 
-        <p>{description}</p>
+        <p className={styles.planSelector__card__header__text}>{description}</p>
 
       </div>
 
